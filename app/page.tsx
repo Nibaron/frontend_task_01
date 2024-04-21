@@ -1,8 +1,16 @@
+'use client'
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1> welcome Home</h1>
-    </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to "/dashboard" after component mounts
+    router.push("/dashboard");
+  }, []); // Empty dependency array ensures this effect runs only once after mount
+
+  return null; // No need to render anything in this component
 }
+
